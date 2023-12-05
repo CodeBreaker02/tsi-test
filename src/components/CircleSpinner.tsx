@@ -5,7 +5,7 @@ interface ICircleSpinner {
 }
 
 export const CircleSpinner: React.FC<ICircleSpinner> = ({
-  className = "w-4 h-4 mr-3",
+  className = "w-10 h-10",
 }) => {
   return (
     <svg
