@@ -190,7 +190,7 @@ export default function Index() {
         </section>
         <div className="h-8 lg:h-20 w-screen bg-white text-lg lg:text-5xl  hidden lg:flex items-center justify-center font-bold slider text-black my-6">
           <p className="animation-slide-infinite">
-            🏀 UPCOMING EVENTS - 12 DEC 2023 - EYA CENTER 🏀
+            UPCOMING EVENTS - 12 DEC 2023 - EYA CENTER 🏀
           </p>
         </div>
         <section className="px-6 md:px-36 py-10 md:py-26">
