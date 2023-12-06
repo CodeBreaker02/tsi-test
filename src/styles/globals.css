@@ -2,44 +2,228 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-main: black;
+}
+
 body {
-    background: rgb(153 27 27);
+    background-color: var(--color-main);
 }
 
-.bounce {
-    animation: bounce 2s infinite;
+.noise{
+    pointer-events: none;
+}
+.noise-inner {
+    animation: bg-animation .2s infinite;
+    visibility: visible;
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(-20px);
-        animation-timing-function: ease-in;
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+.noise {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: .15;
+}
+
+.noise-inner {
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/9a/512x512_Dissolve_Noise_Texture.png?20200626210716);
+    background-position: 50% 50%;
+    background-size: auto;
+}
+
+/* Custom Cursor */
+.circle {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 200px;
+    pointer-events: none;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Preloader */
+
+.NXXoBpNl_0 {
+    stroke-dasharray: 1428 1430;
+    stroke-dashoffset: 1429;
+}
+
+.start .NXXoBpNl_0 {
+    animation: NXXoBpNl_draw 1000ms ease-out 0ms forwards;
+}
+
+.NXXoBpNl_1 {
+    stroke-dasharray: 1099 1101;
+    stroke-dashoffset: 1100;
+}
+
+.start .NXXoBpNl_1 {
+    animation: NXXoBpNl_draw 1000ms ease-out 0ms forwards;
+}
+
+.NXXoBpNl_2 {
+    stroke-dasharray: 148 150;
+    stroke-dashoffset: 149;
+}
+
+.start .NXXoBpNl_2 {
+    animation: NXXoBpNl_draw 1000ms ease-out 0ms forwards;
+}
+
+.NXXoBpNl_3 {
+    stroke-dasharray: 116 118;
+    stroke-dashoffset: 117;
+}
+
+.start .NXXoBpNl_3 {
+    animation: NXXoBpNl_draw 1000ms ease-out 0ms forwards;
+}
+
+.NXXoBpNl_4 {
+    stroke-dasharray: 267 269;
+    stroke-dashoffset: 268;
+}
+
+.start .NXXoBpNl_4 {
+    animation: NXXoBpNl_draw 1000ms ease-out 0ms forwards;
+}
+
+@keyframes NXXoBpNl_draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes NXXoBpNl_fade {
+    0% {
+        stroke-opacity: 1;
+    }
+    92.3076923076923% {
+        stroke-opacity: 1;
+    }
+    100% {
+        stroke-opacity: 0;
+    }
+}
+
+
+
+.rotate-in-center {
+    animation: rotate-in-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes rotate-in-center {
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(45deg);
         opacity: 1;
     }
-    24% {
+}
+
+.slide-out-top {
+    animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.5s both;
+}
+
+@keyframes slide-out-top {
+    0% {
+        transform: translateY(0);
         opacity: 1;
     }
-    40% {
-        transform: translateY(-19px);
-        animation-timing-function: ease-in;
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
     }
-    65% {
-        transform: translateY(-12px);
-        animation-timing-function: ease-in;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    max-height: 50%; height: 50%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Floating */
+.floating {
+    animation: floating-1 4s infinite ease-in-out both;
+}
+
+@keyframes floating-1 {
+    0% {
+        transform: translate(0, 0px);
     }
-    82% {
-        transform: translateY(-6px);
-        animation-timing-function: ease-in;
+    50% {
+        transform: translate(0px, 10px);
     }
-    93% {
-        transform: translateY(-4px);
-        animation-timing-function: ease-in;
+    100% {
+        transform: translate(0, -0px);
     }
-    25%,
-    55%,
-    75%,
-    87% {
-        transform: translateY(0px);
-        animation-timing-function: ease-out;
+}
+
+.slider {
+    transform: rotate(5deg);
+
+}
+@keyframes slideAnimation {
+    0% {
+        transform: translate3d(100%, 0, 0);
     }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.animation-slide-infinite {
+    animation: slideAnimation 10s linear infinite;
 }

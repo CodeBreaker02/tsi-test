@@ -14,7 +14,10 @@ module.exports = {
         main: "#FFCA05",
       },
       fontFamily: {
-        sans: ["var(--satoshi-font)"],
+        sans: ["var(--clash-display-font)"],
+      },
+      fontSize: {
+        "2xs": ".65rem",
       },
     },
   },

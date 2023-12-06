@@ -1,7 +1,10 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
+import Preloader from "@/components/Preloader";
+import { AuthContextProvider } from "@/context/AuthContext";
 
+/*
 const satoshiFont = localFont({
   variable: "--satoshi-font",
   display: "swap",
@@ -23,11 +26,29 @@ const satoshiFont = localFont({
     },
   ],
 });
+*/
+const clashDisplayFont = localFont({
+  variable: "--clash-display-font",
+  display: "swap",
+  src: [
+    {
+      path: "../fonts/ClashDisplay-Variable.ttf",
+      weight: "variable",
+    },
+  ],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${satoshiFont.variable} font-sans`}>
-      <Component {...pageProps} />
-    </main>
+    <AuthContextProvider>
+      <main className={`${clashDisplayFont.variable} font-sans`}>
+        <Preloader />
+        <div className="noise">
+          <div className="w-embed"></div>
+          <div className="noise-inner"></div>
+        </div>
+        <Component {...pageProps} />
+      </main>
+    </AuthContextProvider>
   );
 }

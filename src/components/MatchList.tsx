@@ -27,7 +27,7 @@ const MatchList: React.FC<MatchListProps> = ({
   };
 
   return (
-    <div className="col-span-2 bg-white rounded-md">
+    <div className="col-span-3 bg-white rounded-md p-3">
       <h3 className="text-xl font-semibold mb-4">Upcoming Matches</h3>
       {isError && (
         <div
