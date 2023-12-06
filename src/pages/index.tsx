@@ -157,8 +157,8 @@ export default function Index() {
         <span className="cursorText">{cursorText}</span>
       </MotionDiv>
       <div className="mt-40">
-        <section className="flex flex-col lg:flex-row p-12 animate-fadeIn">
-          <div className="lg:w-1/2 pr-8">
+        <section className="flex flex-col justify-center lg:flex-row p-12 animate-fadeIn">
+          <div className="lg:w-1/2">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-center lg:text-left text-orange-700">
               Elevate Your Finances with Basketball Investments
             </h2>
@@ -180,7 +180,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="lg:w-1/2 floating">
+          <div className="lg:w-1/2 pl-0 md:pl-8 floating">
             <img
               className="object-cover w-full h-full rounded-md shadow-md"
               src="https://www.basketusa.com/wp-content/uploads/2022/03/FM4yR1lXwAIRTCI.jpg"
@@ -196,7 +196,7 @@ export default function Index() {
         <section className="px-6 md:px-36 py-10 md:py-26">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Top Left: Live NBA Match Or Main Event */}
-            <div className="col-span- md:col-span-2 bg-white p-8 rounded-md shadow-md relative">
+            <div className="col-span-3 md:col-span-2 bg-white p-8 rounded-md shadow-md relative">
               <div className="flex justify-evenly mt-6">
                 <p className="text-black mb-2 font-bold text-xl hidden sm:block">
                   {afterTomorrowMatch?.teams.home.name}
